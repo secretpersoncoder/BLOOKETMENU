@@ -1,0 +1,213 @@
+(() => {
+    const shift = (s, n) => s.split("").map(c => String.fromCharCode(c.charCodeAt(0) - n)).join("");
+    const p = shift("efwbddftt", 1);
+
+    const menu = document.createElement("div");
+    menu.style.position = "fixed";
+    menu.style.top = "50px";
+    menu.style.left = "50px";
+    menu.style.width = "320px";
+    menu.style.background = "linear-gradient(135deg, #2a2a2a, #1a1a1a)";
+    menu.style.color = "#e0e0e0";
+    menu.style.padding = "15px";
+    menu.style.borderRadius = "8px";
+    menu.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)";
+    menu.style.zIndex = "1000";
+    menu.style.cursor = "move";
+    menu.style.userSelect = "none";
+    menu.style.fontFamily = "Arial, sans-serif";
+
+    const header = document.createElement("div");
+    header.style.display = "flex";
+    header.style.justifyContent = "space-between";
+    header.style.alignItems = "center";
+    header.style.fontSize = "16px";
+    header.style.fontWeight = "bold";
+    header.textContent = "Blooket Hacks v0.1 - Made by LUCASTAAAA";
+    
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "✕";
+    closeBtn.style.background = "#ff5555";
+    closeBtn.style.border = "none";
+    closeBtn.style.color = "white";
+    closeBtn.style.padding = "4px 8px";
+    closeBtn.style.cursor = "pointer";
+    closeBtn.style.borderRadius = "50%";
+    closeBtn.style.fontSize = "12px";
+    closeBtn.onmouseover = () => closeBtn.style.background = "#ff3333";
+    closeBtn.onmouseout = () => closeBtn.style.background = "#ff5555";
+    closeBtn.onclick = () => menu.remove();
+    
+    header.appendChild(closeBtn);
+    menu.appendChild(header);
+
+    const passwordContainer = document.createElement("div");
+    passwordContainer.style.margin = "10px 0";
+    
+    const passwordLabel = document.createElement("label");
+    passwordLabel.textContent = "Enter Password:";
+    passwordLabel.style.fontSize = "14px";
+    passwordLabel.style.display = "block";
+    passwordLabel.style.marginBottom = "5px";
+    
+    const passwordInput = document.createElement("input");
+    passwordInput.type = "password";
+    passwordInput.style.width = "100%";
+    passwordInput.style.padding = "5px";
+    passwordInput.style.borderRadius = "3px";
+    passwordInput.style.border = "none";
+    passwordInput.style.background = "#3a3a3a";
+    passwordInput.style.color = "#e0e0e0";
+    
+    const submitBtn = document.createElement("button");
+    submitBtn.textContent = "Submit";
+    submitBtn.style.background = "#4a90e2";
+    submitBtn.style.color = "white";
+    submitBtn.style.border = "none";
+    submitBtn.style.padding = "8px 12px";
+    submitBtn.style.cursor = "pointer";
+    submitBtn.style.borderRadius = "5px";
+    submitBtn.style.width = "100%";
+    submitBtn.style.marginTop = "10px";
+    submitBtn.style.fontSize = "14px";
+    submitBtn.onmouseover = () => submitBtn.style.background = "#357abd";
+    submitBtn.onmouseout = () => submitBtn.style.background = "#4a90e2";
+    
+    passwordContainer.appendChild(passwordLabel);
+    passwordContainer.appendChild(passwordInput);
+    passwordContainer.appendChild(submitBtn);
+    menu.appendChild(passwordContainer);
+
+    const toggleButton = document.createElement("button");
+    toggleButton.textContent = "☰";
+    toggleButton.style.position = "fixed";
+    toggleButton.style.top = "10px";
+    toggleButton.style.left = "10px";
+    toggleButton.style.background = "#4a90e2";
+    toggleButton.style.color = "white";
+    toggleButton.style.border = "none";
+    toggleButton.style.padding = "5px 10px";
+    toggleButton.style.cursor = "pointer";
+    toggleButton.style.borderRadius = "5px";
+    toggleButton.style.fontSize = "16px";
+    toggleButton.style.zIndex = "1001";
+    toggleButton.style.display = "none";
+    toggleButton.onmouseover = () => toggleButton.style.background = "#357abd";
+    toggleButton.onmouseout = () => toggleButton.style.background = "#4a90e2";
+    toggleButton.onclick = () => {
+        menu.style.display = "block";
+        toggleButton.style.display = "none";
+    };
+
+    const unlockMenu = () => {
+        if (passwordInput.value === p) {
+            passwordContainer.remove();
+            
+            const info = document.createElement("p");
+            info.textContent = "Only Crypto Mode hacks available.";
+            info.style.margin = "10px 0";
+            info.style.fontSize = "14px";
+            menu.appendChild(info);
+
+            const note = document.createElement("p");
+            note.textContent = "Note: Do not use Always Triple until you have more than 1 crypto coin.";
+            note.style.margin = "5px 0";
+            note.style.fontSize = "12px";
+            note.style.color = "#ffcc00";
+            menu.appendChild(note);
+
+            const tripleBtn = document.createElement("button");
+            tripleBtn.textContent = "Always Triple";
+            tripleBtn.style.background = "#4a90e2";
+            tripleBtn.style.color = "white";
+            tripleBtn.style.border = "none";
+            tripleBtn.style.padding = "8px 12px";
+            tripleBtn.style.cursor = "pointer";
+            tripleBtn.style.borderRadius = "5px";
+            tripleBtn.style.width = "100%";
+            tripleBtn.style.fontSize = "14px";
+            tripleBtn.style.marginBottom = "10px";
+            tripleBtn.onmouseover = () => tripleBtn.style.background = "#357abd";
+            tripleBtn.onmouseout = () => tripleBtn.style.background = "#4a90e2";
+            tripleBtn.onclick = () => {
+                alert("Running Always Triple hack...");
+                setInterval(() => {
+                    Object.values((function react(r = document.querySelector("body>div")) {
+                        return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : react(r.querySelector(":scope>div"));
+                    })())[1].children[0]._owner.stateNode.setState({
+                        choices: [{ type: "mult", val: 3, rate: .075, blook: "Brainy Bot", text: "Triple Crypto" }]
+                    });
+                }, 25);
+            };
+            menu.appendChild(tripleBtn);
+
+            const copyBtn = document.createElement("button");
+            copyBtn.textContent = "Copy Invisible Character";
+            copyBtn.style.background = "#4a90e2";
+            copyBtn.style.color = "white";
+            copyBtn.style.border = "none";
+            copyBtn.style.padding = "8px 12px";
+            copyBtn.style.cursor = "pointer";
+            copyBtn.style.borderRadius = "5px";
+            copyBtn.style.width = "100%";
+            copyBtn.style.fontSize = "14px";
+            copyBtn.onmouseover = () => copyBtn.style.background = "#357abd";
+            copyBtn.onmouseout = () => copyBtn.style.background = "#4a90e2";
+            copyBtn.onclick = () => {
+                const invisibleChar = "‎ ";
+                navigator.clipboard.writeText(invisibleChar).then(() => {
+                    alert("Invisible character copied! Paste it for an invisible name.");
+                }).catch(() => {
+                    alert("Failed to copy, try again.");
+                });
+            };
+            menu.appendChild(copyBtn);
+
+            const collapseBtn = document.createElement("button");
+            collapseBtn.textContent = "Collapse";
+            collapseBtn.style.background = "#4a90e2";
+            collapseBtn.style.color = "white";
+            collapseBtn.style.border = "none";
+            collapseBtn.style.padding = "8px 12px";
+            collapseBtn.style.cursor = "pointer";
+            collapseBtn.style.borderRadius = "5px";
+            collapseBtn.style.width = "100%";
+            collapseBtn.style.fontSize = "14px";
+            collapseBtn.style.marginTop = "10px";
+            collapseBtn.onmouseover = () => collapseBtn.style.background = "#357abd";
+            collapseBtn.onmouseout = () => collapseBtn.style.background = "#4a90e2";
+            collapseBtn.onclick = () => {
+                menu.style.display = "none";
+                toggleButton.style.display = "block";
+            };
+            menu.appendChild(collapseBtn);
+        } else {
+            alert("Invalid password, please try again.");
+        }
+    };
+
+    submitBtn.onclick = unlockMenu;
+    passwordInput.onkeydown = (e) => { if (e.key === "Enter") unlockMenu(); };
+
+    let isDragging = false, currentX, currentY, initialX, initialY;
+    menu.onmousedown = (e) => {
+        isDragging = true;
+        initialX = e.clientX - currentX;
+        initialY = e.clientY - currentY;
+    };
+    document.onmousemove = (e) => {
+        if (isDragging) {
+            e.preventDefault();
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+            menu.style.left = currentX + "px";
+            menu.style.top = currentY + "px";
+        }
+    };
+    document.onmouseup = () => isDragging = false;
+    currentX = parseInt(menu.style.left);
+    currentY = parseInt(menu.style.top);
+
+    document.body.appendChild(menu);
+    document.body.appendChild(toggleButton);
+})();
