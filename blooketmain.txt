@@ -1,213 +1,478 @@
 (() => {
-    const shift = (s, n) => s.split("").map(c => String.fromCharCode(c.charCodeAt(0) - n)).join("");
-    const p = shift("efwbddftt", 1);
+    const _0xabcdef = (s, n) => s.split("").map(c => String.fromCharCode(c.charCodeAt(0) - n)).join("");
+    const _0x123456 = _0xabcdef("efwbddftt", 1);
 
-    const menu = document.createElement("div");
-    menu.style.position = "fixed";
-    menu.style.top = "50px";
-    menu.style.left = "50px";
-    menu.style.width = "320px";
-    menu.style.background = "linear-gradient(135deg, #2a2a2a, #1a1a1a)";
-    menu.style.color = "#e0e0e0";
-    menu.style.padding = "15px";
-    menu.style.borderRadius = "8px";
-    menu.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)";
-    menu.style.zIndex = "1000";
-    menu.style.cursor = "move";
-    menu.style.userSelect = "none";
-    menu.style.fontFamily = "Arial, sans-serif";
+    const _0x789abc = document.createElement("div");
+    _0x789abc.style.position = "fixed";
+    _0x789abc.style.top = "50px";
+    _0x789abc.style.left = "50px";
+    _0x789abc.style.width = "380px";
+    _0x789abc.style.background = "rgba(15, 15, 15, 0.85)";
+    _0x789abc.style.color = "#e0e0e0";
+    _0x789abc.style.padding = "30px";
+    _0x789abc.style.borderRadius = "20px";
+    _0x789abc.style.boxShadow = "0 10px 30px rgba(0, 255, 128, 0.4), inset 0 0 15px rgba(0, 255, 128, 0.1)";
+    _0x789abc.style.border = "3px solid #00ff80";
+    _0x789abc.style.animation = "holoGlow 2.5s infinite ease-in-out, fadeIn 0.5s ease";
+    _0x789abc.style.zIndex = "1000";
+    _0x789abc.style.userSelect = "none";
+    _0x789abc.style.fontFamily = "'Orbitron', 'Segoe UI', sans-serif";
+    _0x789abc.style.backdropFilter = "blur(8px)";
+    _0x789abc.style.overflow = "hidden";
+    _0x789abc.style.position = "relative";
 
-    const header = document.createElement("div");
-    header.style.display = "flex";
-    header.style.justifyContent = "space-between";
-    header.style.alignItems = "center";
-    header.style.fontSize = "16px";
-    header.style.fontWeight = "bold";
-    header.textContent = "Blooket Hacks v0.1 - Made by LUCASTAAAA";
-    
-    const closeBtn = document.createElement("button");
-    closeBtn.textContent = "✕";
-    closeBtn.style.background = "#ff5555";
-    closeBtn.style.border = "none";
-    closeBtn.style.color = "white";
-    closeBtn.style.padding = "4px 8px";
-    closeBtn.style.cursor = "pointer";
-    closeBtn.style.borderRadius = "50%";
-    closeBtn.style.fontSize = "12px";
-    closeBtn.onmouseover = () => closeBtn.style.background = "#ff3333";
-    closeBtn.onmouseout = () => closeBtn.style.background = "#ff5555";
-    closeBtn.onclick = () => menu.remove();
-    
-    header.appendChild(closeBtn);
-    menu.appendChild(header);
+    const _0xdef012 = document.createElement("style");
+    _0xdef012.textContent = `
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @keyframes holoGlow {
+            0% { border-color: #00ff80; box-shadow: 0 10px 30px rgba(0, 255, 128, 0.4); }
+            50% { border-color: #00cc66; box-shadow: 0 10px 30px rgba(0, 255, 128, 0.6); }
+            100% { border-color: #00ff80; box-shadow: 0 10px 30px rgba(0, 255, 128, 0.4); }
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes textFlicker {
+            0% { text-shadow: 0 0 5px rgba(0, 255, 128, 0.6); }
+            50% { text-shadow: 0 0 10px rgba(0, 255, 128, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(0, 255, 128, 0.6); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 255, 128, 0.5);
+            transform: scale(0);
+            animation: rippleEffect 0.7s linear;
+            pointer-events: none;
+        }
+        @keyframes rippleEffect {
+            to { transform: scale(4); opacity: 0; }
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff80, #00cc66);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+    `;
+    document.head.appendChild(_0xdef012);
 
-    const passwordContainer = document.createElement("div");
-    passwordContainer.style.margin = "10px 0";
-    
-    const passwordLabel = document.createElement("label");
-    passwordLabel.textContent = "Enter Password:";
-    passwordLabel.style.fontSize = "14px";
-    passwordLabel.style.display = "block";
-    passwordLabel.style.marginBottom = "5px";
-    
-    const passwordInput = document.createElement("input");
-    passwordInput.type = "password";
-    passwordInput.style.width = "100%";
-    passwordInput.style.padding = "5px";
-    passwordInput.style.borderRadius = "3px";
-    passwordInput.style.border = "none";
-    passwordInput.style.background = "#3a3a3a";
-    passwordInput.style.color = "#e0e0e0";
-    
-    const submitBtn = document.createElement("button");
-    submitBtn.textContent = "Submit";
-    submitBtn.style.background = "#4a90e2";
-    submitBtn.style.color = "white";
-    submitBtn.style.border = "none";
-    submitBtn.style.padding = "8px 12px";
-    submitBtn.style.cursor = "pointer";
-    submitBtn.style.borderRadius = "5px";
-    submitBtn.style.width = "100%";
-    submitBtn.style.marginTop = "10px";
-    submitBtn.style.fontSize = "14px";
-    submitBtn.onmouseover = () => submitBtn.style.background = "#357abd";
-    submitBtn.onmouseout = () => submitBtn.style.background = "#4a90e2";
-    
-    passwordContainer.appendChild(passwordLabel);
-    passwordContainer.appendChild(passwordInput);
-    passwordContainer.appendChild(submitBtn);
-    menu.appendChild(passwordContainer);
+    const _0x345678 = document.createElement("div");
+    _0x345678.style.display = "flex";
+    _0x345678.style.justifyContent = "space-between";
+    _0x345678.style.alignItems = "center";
+    _0x345678.style.fontSize = "22px";
+    _0x345678.style.fontWeight = "700";
+    _0x345678.style.textShadow = "0 0 5px rgba(0, 255, 128, 0.6)";
+    _0x345678.style.animation = "textFlicker 2s infinite";
+    _0x345678.style.paddingBottom = "15px";
+    _0x345678.textContent = "Blooket Hacks v0.2 - LUCASTAAAA";
+    _0x345678.style.cursor = "grab";
 
-    const toggleButton = document.createElement("button");
-    toggleButton.textContent = "☰";
-    toggleButton.style.position = "fixed";
-    toggleButton.style.top = "10px";
-    toggleButton.style.left = "10px";
-    toggleButton.style.background = "#4a90e2";
-    toggleButton.style.color = "white";
-    toggleButton.style.border = "none";
-    toggleButton.style.padding = "5px 10px";
-    toggleButton.style.cursor = "pointer";
-    toggleButton.style.borderRadius = "5px";
-    toggleButton.style.fontSize = "16px";
-    toggleButton.style.zIndex = "1001";
-    toggleButton.style.display = "none";
-    toggleButton.onmouseover = () => toggleButton.style.background = "#357abd";
-    toggleButton.onmouseout = () => toggleButton.style.background = "#4a90e2";
-    toggleButton.onclick = () => {
-        menu.style.display = "block";
-        toggleButton.style.display = "none";
+    const _0x9abcde = document.createElement("button");
+    _0x9abcde.textContent = "✕";
+    _0x9abcde.style.background = "rgba(255, 85, 85, 0.9)";
+    _0x9abcde.style.border = "none";
+    _0x9abcde.style.color = "white";
+    _0x9abcde.style.padding = "6px 14px";
+    _0x9abcde.style.cursor = "pointer";
+    _0x9abcde.style.borderRadius = "50%";
+    _0x9abcde.style.fontSize = "18px";
+    _0x9abcde.style.transition = "transform 0.2s, background 0.2s";
+    _0x9abcde.onmouseover = () => { _0x9abcde.style.background = "#ff3333"; _0x9abcde.style.transform = "scale(1.15)"; };
+    _0x9abcde.onmouseout = () => { _0x9abcde.style.background = "rgba(255, 85, 85, 0.9)"; _0x9abcde.style.transform = "scale(1)"; };
+    _0x9abcde.onclick = () => _0x789abc.remove();
+
+    _0x345678.appendChild(_0x9abcde);
+    _0x789abc.appendChild(_0x345678);
+
+    const _0xfedcba = document.createElement("div");
+    _0xfedcba.style.margin = "20px 0";
+
+    const _0x654321 = document.createElement("label");
+    _0x654321.textContent = "Enter Password:";
+    _0x654321.style.fontSize = "16px";
+    _0x654321.style.display = "block";
+    _0x654321.style.marginBottom = "12px";
+    _0x654321.style.color = "#c0c0c0";
+
+    const _0x0fedcb = document.createElement("input");
+    _0x0fedcb.type = "password";
+    _0x0fedcb.style.width = "100%";
+    _0x0fedcb.style.padding = "12px";
+    _0x0fedcb.style.borderRadius = "10px";
+    _0x0fedcb.style.border = "2px solid rgba(0, 255, 128, 0.5)";
+    _0x0fedcb.style.background = "rgba(30, 30, 30, 0.8)";
+    _0x0fedcb.style.color = "#e0e0e0";
+    _0x0fedcb.style.boxShadow = "inset 0 0 8px rgba(0, 255, 128, 0.2)";
+    _0x0fedcb.style.transition = "border 0.3s, box-shadow 0.3s";
+    _0x0fedcb.onfocus = () => { _0x0fedcb.style.border = "2px solid #00ff80"; _0x0fedcb.style.boxShadow = "0 0 12px rgba(0, 255, 128, 0.6)"; };
+    _0x0fedcb.onblur = () => { _0x0fedcb.style.border = "2px solid rgba(0, 255, 128, 0.5)"; _0x0fedcb.style.boxShadow = "inset 0 0 8px rgba(0, 255, 128, 0.2)"; };
+
+    const _0xabcdefg = document.createElement("button");
+    _0xabcdefg.textContent = "Submit";
+    _0xabcdefg.style.background = "linear-gradient(90deg, #4a90e2, #357abd)";
+    _0xabcdefg.style.backgroundSize = "200% 200%";
+    _0xabcdefg.style.animation = "gradientShift 3s ease infinite";
+    _0xabcdefg.style.color = "white";
+    _0xabcdefg.style.border = "none";
+    _0xabcdefg.style.padding = "14px";
+    _0xabcdefg.style.cursor = "pointer";
+    _0xabcdefg.style.borderRadius = "10px";
+    _0xabcdefg.style.width = "100%";
+    _0xabcdefg.style.marginTop = "15px";
+    _0xabcdefg.style.fontSize = "16px";
+    _0xabcdefg.style.fontWeight = "600";
+    _0xabcdefg.style.position = "relative";
+    _0xabcdefg.style.overflow = "hidden";
+    _0xabcdefg.style.transition = "transform 0.2s";
+    _0xabcdefg.onmouseover = () => _0xabcdefg.style.transform = "perspective(500px) rotateX(5deg)";
+    _0xabcdefg.onmouseout = () => _0xabcdefg.style.transform = "perspective(500px) rotateX(0deg)";
+    _0xabcdefg.onclick = (e) => {
+        const _0xrect = _0xabcdefg.getBoundingClientRect();
+        const _0xrip = document.createElement("span");
+        _0xrip.className = "ripple";
+        _0xrip.style.left = `${e.clientX - _0xrect.left}px`;
+        _0xrip.style.top = `${e.clientY - _0xrect.top}px`;
+        _0xabcdefg.appendChild(_0xrip);
+        _0xabcdefg.style.animation = "bounce 0.3s";
+        setTimeout(() => { _0xrip.remove(); _0xabcdefg.style.animation = "gradientShift 3s ease infinite"; }, 700);
+        _0x987654();
     };
 
-    const unlockMenu = () => {
-        if (passwordInput.value === p) {
-            passwordContainer.remove();
-            
-            const info = document.createElement("p");
-            info.textContent = "Only Crypto Mode hacks available.";
-            info.style.margin = "10px 0";
-            info.style.fontSize = "14px";
-            menu.appendChild(info);
+    const _0xcollapseBtnInit = document.createElement("button");
+    _0xcollapseBtnInit.textContent = "Collapse";
+    _0xcollapseBtnInit.style.background = "linear-gradient(90deg, #4a90e2, #357abd)";
+    _0xcollapseBtnInit.style.backgroundSize = "200% 200%";
+    _0xcollapseBtnInit.style.animation = "gradientShift 3s ease infinite";
+    _0xcollapseBtnInit.style.color = "white";
+    _0xcollapseBtnInit.style.border = "none";
+    _0xcollapseBtnInit.style.padding = "14px";
+    _0xcollapseBtnInit.style.cursor = "pointer";
+    _0xcollapseBtnInit.style.borderRadius = "10px";
+    _0xcollapseBtnInit.style.width = "100%";
+    _0xcollapseBtnInit.style.fontSize = "16px";
+    _0xcollapseBtnInit.style.marginTop = "15px";
+    _0xcollapseBtnInit.style.position = "relative";
+    _0xcollapseBtnInit.style.overflow = "hidden";
+    _0xcollapseBtnInit.style.transition = "transform 0.2s";
+    _0xcollapseBtnInit.onmouseover = () => _0xcollapseBtnInit.style.transform = "perspective(500px) rotateX(5deg)";
+    _0xcollapseBtnInit.onmouseout = () => _0xcollapseBtnInit.style.transform = "perspective(500px) rotateX(0deg)";
+    _0xcollapseBtnInit.onclick = (e) => {
+        const _0xrect = _0xcollapseBtnInit.getBoundingClientRect();
+        const _0xrip = document.createElement("span");
+        _0xrip.className = "ripple";
+        _0xrip.style.left = `${e.clientX - _0xrect.left}px`;
+        _0xrip.style.top = `${e.clientY - _0xrect.top}px`;
+        _0xcollapseBtnInit.appendChild(_0xrip);
+        _0xcollapseBtnInit.style.animation = "bounce 0.3s";
+        setTimeout(() => { _0xrip.remove(); _0xcollapseBtnInit.style.animation = "gradientShift 3s ease infinite"; }, 700);
+        _0x789abc.style.display = "none";
+        _0x111111.style.display = "block";
+    };
 
-            const note = document.createElement("p");
-            note.textContent = "Note: Do not use Always Triple until you have more than 1 crypto coin.";
-            note.style.margin = "5px 0";
-            note.style.fontSize = "12px";
-            note.style.color = "#ffcc00";
-            menu.appendChild(note);
+    _0xfedcba.appendChild(_0x654321);
+    _0xfedcba.appendChild(_0x0fedcb);
+    _0xfedcba.appendChild(_0xabcdefg);
+    _0xfedcba.appendChild(_0xcollapseBtnInit);
+    _0x789abc.appendChild(_0xfedcba);
 
-            const tripleBtn = document.createElement("button");
-            tripleBtn.textContent = "Always Triple";
-            tripleBtn.style.background = "#4a90e2";
-            tripleBtn.style.color = "white";
-            tripleBtn.style.border = "none";
-            tripleBtn.style.padding = "8px 12px";
-            tripleBtn.style.cursor = "pointer";
-            tripleBtn.style.borderRadius = "5px";
-            tripleBtn.style.width = "100%";
-            tripleBtn.style.fontSize = "14px";
-            tripleBtn.style.marginBottom = "10px";
-            tripleBtn.onmouseover = () => tripleBtn.style.background = "#357abd";
-            tripleBtn.onmouseout = () => tripleBtn.style.background = "#4a90e2";
-            tripleBtn.onclick = () => {
-                alert("Running Always Triple hack...");
+    const _0x111111 = document.createElement("button");
+    _0x111111.textContent = "☰";
+    _0x111111.style.position = "fixed";
+    _0x111111.style.top = "10px";
+    _0x111111.style.left = "10px";
+    _0x111111.style.background = "linear-gradient(90deg, #4a90e2, #357abd)";
+    _0x111111.style.backgroundSize = "200% 200%";
+    _0x111111.style.animation = "gradientShift 3s ease infinite";
+    _0x111111.style.color = "white";
+    _0x111111.style.border = "none";
+    _0x111111.style.padding = "10px 16px";
+    _0x111111.style.cursor = "pointer";
+    _0x111111.style.borderRadius = "10px";
+    _0x111111.style.fontSize = "22px";
+    _0x111111.style.zIndex = "1001";
+    _0x111111.style.display = "none";
+    _0x111111.style.transition = "transform 0.2s";
+    _0x111111.onmouseover = () => _0x111111.style.transform = "scale(1.15)";
+    _0x111111.onmouseout = () => _0x111111.style.transform = "scale(1)";
+    _0x111111.onclick = () => {
+        _0x789abc.style.display = "block";
+        _0x111111.style.display = "none";
+    };
+
+    const _0x222222 = document.createElement("div");
+    _0x222222.style.marginTop = "20px";
+    _0x222222.style.fontSize = "14px";
+    _0x222222.style.color = "#00ff80";
+    _0x222222.style.textAlign = "center";
+    _0x222222.style.textShadow = "0 0 6px rgba(0, 255, 128, 0.5)";
+    _0x222222.style.display = "none";
+
+    const _0x333333 = document.createElement("div");
+    _0x333333.className = "progress-bar";
+    _0x333333.style.display = "none";
+    const _0x444444 = document.createElement("div");
+    _0x444444.className = "progress-fill";
+    _0x333333.appendChild(_0x444444);
+
+    const _0x987654 = () => {
+        const _0xinputVal = _0x0fedcb.value.trim().toLowerCase();
+        if (_0xinputVal === _0x123456.toLowerCase()) {
+            _0xfedcba.remove();
+            const _0x555555 = document.createElement("p");
+            _0x555555.textContent = "Crypto Mode Hacks - v0.2";
+            _0x555555.style.margin = "10px 0";
+            _0x555555.style.fontSize = "16px";
+            _0x555555.style.color = "#00ff80";
+            _0x555555.style.textShadow = "0 0 6px rgba(0, 255, 128, 0.5)";
+            _0x555555.style.animation = "textFlicker 2s infinite";
+            _0x789abc.appendChild(_0x555555);
+
+            const _0x666666 = document.createElement("p");
+            _0x666666.textContent = "Note: Always Triple needs >1 coin.";
+            _0x666666.style.margin = "5px 0";
+            _0x666666.style.fontSize = "13px";
+            _0x666666.style.color = "#ffcc00";
+            _0x789abc.appendChild(_0x666666);
+
+            const _0x777777 = document.createElement("p");
+            _0x777777.textContent = "Note: Max Coins is visual only unless Always Triple is on.";
+            _0x777777.style.margin = "5px 0";
+            _0x777777.style.fontSize = "13px";
+            _0x777777.style.color = "#ff5555";
+            _0x789abc.appendChild(_0x777777);
+
+            const _0x888888 = document.createElement("button");
+            _0x888888.textContent = "Always Triple";
+            _0x888888.style.background = "linear-gradient(90deg, #4a90e2, #357abd)";
+            _0x888888.style.backgroundSize = "200% 200%";
+            _0x888888.style.animation = "gradientShift 3s ease infinite";
+            _0x888888.style.color = "white";
+            _0x888888.style.border = "none";
+            _0x888888.style.padding = "14px";
+            _0x888888.style.cursor = "pointer";
+            _0x888888.style.borderRadius = "10px";
+            _0x888888.style.width = "100%";
+            _0x888888.style.fontSize = "16px";
+            _0x888888.style.marginBottom = "12px";
+            _0x888888.style.position = "relative";
+            _0x888888.style.overflow = "hidden";
+            _0x888888.style.transition = "transform 0.2s";
+            _0x888888.onmouseover = () => _0x888888.style.transform = "perspective(500px) rotateX(5deg)";
+            _0x888888.onmouseout = () => _0x888888.style.transform = "perspective(500px) rotateX(0deg)";
+            _0x888888.onclick = (e) => {
+                const _0xrect = _0x888888.getBoundingClientRect();
+                const _0xrip = document.createElement("span");
+                _0xrip.className = "ripple";
+                _0xrip.style.left = `${e.clientX - _0xrect.left}px`;
+                _0xrip.style.top = `${e.clientY - _0xrect.top}px`;
+                _0x888888.appendChild(_0xrip);
+                _0x888888.style.animation = "bounce 0.3s";
+                setTimeout(() => { _0xrip.remove(); _0x888888.style.animation = "gradientShift 3s ease infinite"; }, 700);
+                _0x222222.style.display = "block";
+                _0x222222.textContent = "Running Always Triple...";
                 setInterval(() => {
-                    Object.values((function react(r = document.querySelector("body>div")) {
-                        return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : react(r.querySelector(":scope>div"));
+                    Object.values((function _0xreact(r = document.querySelector("body>div")) {
+                        return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : _0xreact(r.querySelector(":scope>div"));
                     })())[1].children[0]._owner.stateNode.setState({
                         choices: [{ type: "mult", val: 3, rate: .075, blook: "Brainy Bot", text: "Triple Crypto" }]
                     });
                 }, 25);
             };
-            menu.appendChild(tripleBtn);
+            _0x789abc.appendChild(_0x888888);
 
-            const copyBtn = document.createElement("button");
-            copyBtn.textContent = "Copy Invisible Character";
-            copyBtn.style.background = "#4a90e2";
-            copyBtn.style.color = "white";
-            copyBtn.style.border = "none";
-            copyBtn.style.padding = "8px 12px";
-            copyBtn.style.cursor = "pointer";
-            copyBtn.style.borderRadius = "5px";
-            copyBtn.style.width = "100%";
-            copyBtn.style.fontSize = "14px";
-            copyBtn.onmouseover = () => copyBtn.style.background = "#357abd";
-            copyBtn.onmouseout = () => copyBtn.style.background = "#4a90e2";
-            copyBtn.onclick = () => {
-                const invisibleChar = "‎ ";
-                navigator.clipboard.writeText(invisibleChar).then(() => {
-                    alert("Invisible character copied! Paste it for an invisible name.");
+            const _0x999999 = document.createElement("button");
+            _0x999999.textContent = "Copy Invisible Char";
+            _0x999999.style.background = "linear-gradient(90deg, #4a90e2, #357abd)";
+            _0x999999.style.backgroundSize = "200% 200%";
+            _0x999999.style.animation = "gradientShift 3s ease infinite";
+            _0x999999.style.color = "white";
+            _0x999999.style.border = "none";
+            _0x999999.style.padding = "14px";
+            _0x999999.style.cursor = "pointer";
+            _0x999999.style.borderRadius = "10px";
+            _0x999999.style.width = "100%";
+            _0x999999.style.fontSize = "16px";
+            _0x999999.style.marginBottom = "12px";
+            _0x999999.style.position = "relative";
+            _0x999999.style.overflow = "hidden";
+            _0x999999.style.transition = "transform 0.2s";
+            _0x999999.onmouseover = () => _0x999999.style.transform = "perspective(500px) rotateX(5deg)";
+            _0x999999.onmouseout = () => _0x999999.style.transform = "perspective(500px) rotateX(0deg)";
+            _0x999999.onclick = (e) => {
+                const _0xrect = _0x999999.getBoundingClientRect();
+                const _0xrip = document.createElement("span");
+                _0xrip.className = "ripple";
+                _0xrip.style.left = `${e.clientX - _0xrect.left}px`;
+                _0xrip.style.top = `${e.clientY - _0xrect.top}px`;
+                _0x999999.appendChild(_0xrip);
+                _0x999999.style.animation = "bounce 0.3s";
+                setTimeout(() => { _0xrip.remove(); _0x999999.style.animation = "gradientShift 3s ease infinite"; }, 700);
+                const _0xinv = "‎ ";
+                navigator.clipboard.writeText(_0xinv).then(() => {
+                    _0x222222.style.display = "block";
+                    _0x222222.textContent = "Invisible char copied!";
+                    setTimeout(() => _0x222222.style.display = "none", 2000);
                 }).catch(() => {
-                    alert("Failed to copy, try again.");
+                    _0x222222.style.display = "block";
+                    _0x222222.textContent = "Copy failed!";
+                    setTimeout(() => _0x222222.style.display = "none", 2000);
                 });
             };
-            menu.appendChild(copyBtn);
+            _0x789abc.appendChild(_0x999999);
 
-            const collapseBtn = document.createElement("button");
-            collapseBtn.textContent = "Collapse";
-            collapseBtn.style.background = "#4a90e2";
-            collapseBtn.style.color = "white";
-            collapseBtn.style.border = "none";
-            collapseBtn.style.padding = "8px 12px";
-            collapseBtn.style.cursor = "pointer";
-            collapseBtn.style.borderRadius = "5px";
-            collapseBtn.style.width = "100%";
-            collapseBtn.style.fontSize = "14px";
-            collapseBtn.style.marginTop = "10px";
-            collapseBtn.onmouseover = () => collapseBtn.style.background = "#357abd";
-            collapseBtn.onmouseout = () => collapseBtn.style.background = "#4a90e2";
-            collapseBtn.onclick = () => {
-                menu.style.display = "none";
-                toggleButton.style.display = "block";
+            const _0xaaaaaa = document.createElement("button");
+            _0xaaaaaa.textContent = "Max Crypto Coins";
+            _0xaaaaaa.style.background = "linear-gradient(90deg, #4a90e2, #357abd)";
+            _0xaaaaaa.style.backgroundSize = "200% 200%";
+            _0xaaaaaa.style.animation = "gradientShift 3s ease infinite";
+            _0xaaaaaa.style.color = "white";
+            _0xaaaaaa.style.border = "none";
+            _0xaaaaaa.style.padding = "14px";
+            _0xaaaaaa.style.cursor = "pointer";
+            _0xaaaaaa.style.borderRadius = "10px";
+            _0xaaaaaa.style.width = "100%";
+            _0xaaaaaa.style.fontSize = "16px";
+            _0xaaaaaa.style.marginBottom = "12px";
+            _0xaaaaaa.style.position = "relative";
+            _0xaaaaaa.style.overflow = "hidden";
+            _0xaaaaaa.style.transition = "transform 0.2s";
+            _0xaaaaaa.onmouseover = () => _0xaaaaaa.style.transform = "perspective(500px) rotateX(5deg)";
+            _0xaaaaaa.onmouseout = () => _0xaaaaaa.style.transform = "perspective(500px) rotateX(0deg)";
+            _0xaaaaaa.onclick = (e) => {
+                const _0xrect = _0xaaaaaa.getBoundingClientRect();
+                const _0xrip = document.createElement("span");
+                _0xrip.className = "ripple";
+                _0xrip.style.left = `${e.clientX - _0xrect.left}px`;
+                _0xrip.style.top = `${e.clientY - _0xrect.top}px`;
+                _0xaaaaaa.appendChild(_0xrip);
+                _0xaaaaaa.style.animation = "bounce 0.3s";
+                setTimeout(() => { _0xrip.remove(); _0xaaaaaa.style.animation = "gradientShift 3s ease infinite"; }, 700);
+                _0x222222.style.display = "block";
+                _0x333333.style.display = "block";
+                _0x222222.textContent = "Stacking coins...";
+                let _0xint = setInterval(() => {
+                    const _0xnode = (function _0xreact(r = document.querySelector("body>div")) {
+                        return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : _0xreact(r.querySelector(":scope>div"));
+                    })();
+                    if (_0xnode) {
+                        const _0xstate = Object.values(_0xnode)[1].children[0]._owner.stateNode.state;
+                        const _0xcrypto = _0xstate.crypto || 0;
+                        if (_0xcrypto >= 1000000) {
+                            clearInterval(_0xint);
+                            _0x222222.textContent = "1M coins stacked, fam!";
+                            _0x444444.style.width = "100%";
+                            setTimeout(() => { _0x222222.style.display = "none"; _0x333333.style.display = "none"; }, 2000);
+                        } else {
+                            Object.values(_0xnode)[1].children[0]._owner.stateNode.setState({ crypto: _0xcrypto + 10000 });
+                            _0x222222.textContent = `Coins: ${_0xcrypto + 10000}`;
+                            _0x444444.style.width = `${Math.min((_0xcrypto + 10000) / 1000000 * 100, 100)}%`;
+                        }
+                    } else {
+                        clearInterval(_0xint);
+                        _0x222222.textContent = "Yo, get in Crypto Mode!";
+                        setTimeout(() => { _0x222222.style.display = "none"; _0x333333.style.display = "none"; }, 2000);
+                    }
+                }, 100);
             };
-            menu.appendChild(collapseBtn);
+            _0x789abc.appendChild(_0xaaaaaa);
+
+            const _0xbbbbbb = document.createElement("button");
+            _0xbbbbbb.textContent = "Collapse";
+            _0xbbbbbb.style.background = "linear-gradient(90deg, #4a90e2, #357abd)";
+            _0xbbbbbb.style.backgroundSize = "200% 200%";
+            _0xbbbbbb.style.animation = "gradientShift 3s ease infinite";
+            _0xbbbbbb.style.color = "white";
+            _0xbbbbbb.style.border = "none";
+            _0xbbbbbb.style.padding = "14px";
+            _0xbbbbbb.style.cursor = "pointer";
+            _0xbbbbbb.style.borderRadius = "10px";
+            _0xbbbbbb.style.width = "100%";
+            _0xbbbbbb.style.fontSize = "16px";
+            _0xbbbbbb.style.marginTop = "10px";
+            _0xbbbbbb.style.position = "relative";
+            _0xbbbbbb.style.overflow = "hidden";
+            _0xbbbbbb.style.transition = "transform 0.2s";
+            _0xbbbbbb.onmouseover = () => _0xbbbbbb.style.transform = "perspective(500px) rotateX(5deg)";
+            _0xbbbbbb.onmouseout = () => _0xbbbbbb.style.transform = "perspective(500px) rotateX(0deg)";
+            _0xbbbbbb.onclick = (e) => {
+                const _0xrect = _0xbbbbbb.getBoundingClientRect();
+                const _0xrip = document.createElement("span");
+                _0xrip.className = "ripple";
+                _0xrip.style.left = `${e.clientX - _0xrect.left}px`;
+                _0xrip.style.top = `${e.clientY - _0xrect.top}px`;
+                _0xbbbbbb.appendChild(_0xrip);
+                _0xbbbbbb.style.animation = "bounce 0.3s";
+                setTimeout(() => { _0xrip.remove(); _0xbbbbbb.style.animation = "gradientShift 3s ease infinite"; }, 700);
+                _0x789abc.style.display = "none";
+                _0x111111.style.display = "block";
+            };
+            _0x789abc.appendChild(_0xbbbbbb);
+            _0x789abc.appendChild(_0x222222);
+            _0x789abc.appendChild(_0x333333);
         } else {
-            alert("Invalid password, please try again.");
+            _0x222222.style.display = "block";
+            _0x222222.textContent = `Invalid password! Expected: ${_0x123456}, Got: ${_0xinputVal}`;
+            _0x0fedcb.style.animation = "shake 0.5s";
+            setTimeout(() => {
+                _0x222222.style.display = "none";
+                _0x0fedcb.style.animation = "none";
+            }, 3000);
         }
     };
 
-    submitBtn.onclick = unlockMenu;
-    passwordInput.onkeydown = (e) => { if (e.key === "Enter") unlockMenu(); };
+    _0x0fedcb.onkeydown = (e) => { if (e.key === "Enter") _0x987654(); };
 
-    let isDragging = false, currentX, currentY, initialX, initialY;
-    menu.onmousedown = (e) => {
-        isDragging = true;
-        initialX = e.clientX - currentX;
-        initialY = e.clientY - currentY;
+    let _0xcccccc = false, _0xcurX, _0xcurY, _0xinitX, _0xinitY;
+    _0x345678.onmousedown = (e) => {
+        _0xcccccc = true;
+        _0xinitX = e.clientX - _0xcurX;
+        _0xinitY = e.clientY - _0xcurY;
+        _0x345678.style.cursor = "grabbing";
     };
     document.onmousemove = (e) => {
-        if (isDragging) {
+        if (_0xcccccc) {
             e.preventDefault();
-            currentX = e.clientX - initialX;
-            currentY = e.clientY - initialY;
-            menu.style.left = currentX + "px";
-            menu.style.top = currentY + "px";
+            _0xcurX = e.clientX - _0xinitX;
+            _0xcurY = e.clientY - _0xinitY;
+            _0x789abc.style.left = `${_0xcurX}px`;
+            _0x789abc.style.top = `${_0xcurY}px`;
         }
     };
-    document.onmouseup = () => isDragging = false;
-    currentX = parseInt(menu.style.left);
-    currentY = parseInt(menu.style.top);
+    document.onmouseup = () => {
+        _0xcccccc = false;
+        _0x345678.style.cursor = "grab";
+    };
+    _0xcurX = parseInt(_0x789abc.style.left);
+    _0xcurY = parseInt(_0x789abc.style.top);
 
-    document.body.appendChild(menu);
-    document.body.appendChild(toggleButton);
+    document.body.appendChild(_0x789abc);
+    document.body.appendChild(_0x111111);
 })();
